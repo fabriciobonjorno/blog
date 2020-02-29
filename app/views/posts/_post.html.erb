@@ -5,7 +5,7 @@
       <em>Autor: <%= post.author %> ( <%= l post.created_at, format: :long %> )</em>
     </div>
     <p>
-      <%= post.body.truncate(400) %>
+      <%= post.body.truncate(400).gsub("\n", "<br>").html_safe %>
     </p>
     <p class="text-muted"><%= pluralize(post.comments.count, 'Comentário')%> </p>
     <%= link_to  "Ler Artigo", post, class:"btn btn-primary" %>
