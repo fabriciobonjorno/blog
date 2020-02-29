@@ -1,4 +1,4 @@
-<div class="card bg-light">
+<div class="card bg-light mb-3">
   <div class="card-body">
     <h3><%= link_to post.title, post, class:'text-dark' %></h3>
     <div class="text-muted mb-3">
@@ -8,5 +8,9 @@
       <%= post.body.truncate(400) %>
     </p>
     <p class="text-muted"><%= pluralize(post.comments.count, 'Comentário')%> </p>
+    <%= link_to  "Ler Artigo", post, class:"btn btn-primary" %>
+    <%= link_to  "Editar Artigo", edit_post_path(post), class:"btn btn-secondary" %>
+    <%= link_to  "Apagar Artigo", post, method: :delete, class:"btn btn-danger",
+        data: { confirm: 'Deseja apagar este artigo?'}%>
   </div>
 </div>
