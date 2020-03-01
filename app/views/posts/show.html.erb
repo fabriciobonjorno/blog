@@ -20,7 +20,11 @@
     <%= form.hidden_field :post_id, value: @post.id %>
     <div class="form-group">
       <%= form.label :author %>
-      <%= form.text_field :author, :value=>current_user.name, class: 'form-control', :readonly => true%>
+      <% if signed_in? %>
+          <%= form.text_field :author, :value=>current_user.name, class: 'form-control', :readonly => true%>
+      <% else %>
+          <%= form.text_field :author, class: 'form-control'%>
+      <% end %>
     </div>
     <div class="form-group">
       <%= form.label :body %>
