@@ -38,7 +38,7 @@ end
         format.html { redirect_to @post, notice: 'Post criado com sucesso.' }
         format.json { render :show, status: :created, location: @post }
       else
-        flash.now[:alert] = 'Erro ao cadastrar o post'
+        flash.now[:alert] = @post.errors.full_messages.to_sentence
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
