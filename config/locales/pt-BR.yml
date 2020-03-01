@@ -12,3 +12,8 @@ pt-BR:
       comment:
         author: 'Autor'
         body: 'Comentário'
+  devise:
+    sessions:
+      signed_in: "Login efetuado com sucesso!"
+      signed_out: "Saiu com sucesso."
+      already_signed_out: "Saiu com sucesso."
