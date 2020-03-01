@@ -3,9 +3,8 @@
   <hr>
   <p class="p-3"><%= @post.body.gsub("\n", "<br>").html_safe %></p>
   <small>
-      <p class="text-muted text-right"><em><strong>Por: <%= @post.author %> </strong><br>
-      <%= l @post.created_at, format: :long %></em></p>
+    <p class="text-muted text-right"><em><strong>Por: <%= @post.author %> </strong><br>
+        <%= l @post.created_at, format: :long %></em></p>
   </small>
-<%= link_to 'Voltar', posts_path, class: 'btn btn-primary mt-3' %>
+  <%= link_to 'Voltar', posts_path, class: 'btn btn-primary mt-3' %>
 </div>
-

@@ -4,31 +4,29 @@
     <title>Blog de TI</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <div class="bg-primary text-white mb-4 p-3 text-center">
-        <%= link_to root_path, class: 'text-white' do  %>
-          <h1 class="display-4">Blog de T.I</h1>
-        <% end %>
-        <p class="lead">Olá, aqui você encontrará artigos sobre programação, tecnologia e carreira
-        </p>
+      <%= link_to root_path, class: 'text-white' do  %>
+        <h1 class="display-4">Blog de T.I</h1>
+      <% end %>
+      <p class="lead">Olá, aqui você encontrará artigos sobre programação, tecnologia e carreira
+      </p>
     </div>
     <div class="container">
-    <%= yield %>
+      <%= yield %>
     </div>
     <footer class="bg-primary text-white mt-4 p-4 text-center">
       Copyright &copy; Blog de T.I <%= Date.current.year %>.
       <div class="text-center mt-2">
-  <% if signed_in? %>
-     <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:'btn btn-success' %>
-  <% else %>
-    <%= link_to 'Entrar', new_user_session_path, class:'btn btn-success' %>
-  <% end %>
-</div>
+        <% if signed_in? %>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:'btn btn-success' %>
+        <% else %>
+          <%= link_to 'Entrar', new_user_session_path, class:'btn btn-success' %>
+        <% end %>
+      </div>
     </footer>
   </body>
 </html>

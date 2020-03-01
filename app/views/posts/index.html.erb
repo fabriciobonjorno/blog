@@ -1,11 +1,9 @@
 <% @posts.each do |post| %>
-   <%= render (post) %>
+  <%= render (post) %>
 <% end %>
-
 <hr>
 <div class="text-right">
   <% if signed_in? %>
     <%= link_to 'Novo Post', new_post_path, class:'btn btn-success' %>
   <% end %>
 </div>
-
