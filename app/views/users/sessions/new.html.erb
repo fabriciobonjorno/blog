@@ -1,0 +1,19 @@
+<div class="text-center form-signin">
+  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.label :email, for:'inputEmail', class:'sr-only' %>
+    <%= f.email_field :email, type:'email', id:'inputEmail', class:'form-control', autofocus: true, autocomplete: "email" %>
+    <%= f.label :password, for:'inputPassword', class:'sr-only' %>
+    <%= f.password_field :password, type:'password', id:'inputPassword', class:'form-control', autocomplete: "current-password" %>
+    <% if devise_mapping.rememberable? %>
+      <div class="checkbox mt-3">
+        <%= f.check_box :remember_me, type:'checkbox' %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit "Log in", class:'btn btn-lg btn-primary btn-block mb-3' %>
+    </div>
+  <% end %>
+  <%= render "users/shared/links" %>
+</div>
