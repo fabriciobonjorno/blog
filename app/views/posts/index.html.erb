@@ -3,7 +3,9 @@
 <% end %>
 
 <hr>
-
 <div class="text-right">
-  <%= link_to  "Novo Post", new_post_path, class:'btn btn-success' %>
+  <% if signed_in? %>
+    <%= link_to 'Novo Post', new_post_path, class:'btn btn-success' %>
+  <% end %>
 </div>
+

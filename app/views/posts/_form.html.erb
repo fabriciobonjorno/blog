@@ -5,8 +5,8 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :author %>
-    <%= form.text_field :author, class: 'form-control' %>
+    <%= form.label :author%>
+    <%= form.text_field :author, :value=>current_user.email, class: 'form-control', :readonly => true%>
   </div>
 
   <div class="form-group">

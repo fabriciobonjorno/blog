@@ -20,14 +20,15 @@
     <div class="container">
     <%= yield %>
     </div>
-    <% if @posts.count >= 3 %>
     <footer class="bg-primary text-white mt-4 p-4 text-center">
       Copyright &copy; Blog de T.I <%= Date.current.year %>.
+      <div class="text-center mt-2">
+  <% if signed_in? %>
+     <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:'btn btn-success' %>
+  <% else %>
+    <%= link_to 'Entrar', new_user_session_path, class:'btn btn-success' %>
+  <% end %>
+</div>
     </footer>
-    <% else %>
-    <footer class="bg-primary text-white mt-4 p-4 text-center fixed-bottom">
-      Copyright &copy; Blog de T.I <%= Date.current.year %>.
-    </footer>
-    <% end %>
   </body>
 </html>
