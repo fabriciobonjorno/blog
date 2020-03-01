@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc)
   end
 
+def search
+  @posts = Post.search(search_params[:q])
+end
+
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -75,4 +79,9 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :author, :body)
   end
+
+  def search_params
+    params.permit(:q)
+  end
+
 end

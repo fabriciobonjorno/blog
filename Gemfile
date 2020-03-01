@@ -13,6 +13,8 @@ gem 'puma', '~> 3.11'
 gem 'rails-i18n'
 # Convert id 
 gem 'friendly_id'
+# Postgres Search
+gem 'pg_search'
 # Flexible authentication solution for Rails with Warden. 
 gem 'devise'
 # Use SCSS for stylesheets
