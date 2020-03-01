@@ -11,6 +11,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Use translate
 gem 'rails-i18n'
+# Convert id 
+gem 'friendly_id'
 # Flexible authentication solution for Rails with Warden. 
 gem 'devise'
 # Use SCSS for stylesheets
