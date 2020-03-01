@@ -14,13 +14,20 @@
         <%= link_to root_path, class: 'text-white' do  %>
           <h1 class="display-4">Blog de T.I</h1>
         <% end %>
-        <p class="lead">Olá, aqui você encontrará artigos sobre programação, tecnologia e carreira</p>
+        <p class="lead">Olá, aqui você encontrará artigos sobre programação, tecnologia e carreira
+        </p>
     </div>
     <div class="container">
     <%= yield %>
     </div>
+    <% if @posts.count >= 3 %>
+    <footer class="bg-primary text-white mt-4 p-4 text-center">
+      Copyright &copy; Blog de T.I <%= Date.current.year %>.
+    </footer>
+    <% else %>
     <footer class="bg-primary text-white mt-4 p-4 text-center fixed-bottom">
       Copyright &copy; Blog de T.I <%= Date.current.year %>.
-    </footer>    
+    </footer>
+    <% end %>
   </body>
 </html>
