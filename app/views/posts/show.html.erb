@@ -8,3 +8,29 @@
   </small>
   <%= link_to 'Voltar', posts_path, class: 'btn btn-primary mt-3' %>
 </div>
+
+<div class="m-5">
+    <div class="text-center">
+      <h4><%= pluralize(@post.comments.count, 'Comentário')%>
+        <% if @post.comments.none? %>
+          <span class="badge badge-success">Seja o primeiro a comentar!</span>
+        <% end %>
+      </h4>
+    </div>
+
+  <%= form_with model: @comments, local: true do |form|  %>
+  <%= form.hidden_field :post_id, value: @post.id %>
+    <div class="form-group">
+      <%= form.label :author %>
+      <%= form.text_field :author, :value=>current_user.name, class: 'form-control', :readonly => true%>
+    </div>
+    <div class="form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'form-control', rows: 5 %>
+    </div>
+    <div class="actions">
+      <%= form.submit class: 'btn btn-primary', data: { disable_with: 'Criando....⌛'}%>
+      <%= link_to 'Cancelar', posts_path, class: 'btn btn-danger' %>
+    </div>
+    <% end %>
+  </div>
