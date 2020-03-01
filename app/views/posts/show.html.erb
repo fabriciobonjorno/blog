@@ -16,23 +16,43 @@
       <% end %>
     </h4>
   </div>
-  <%= form_with model: @comment, local: true do |form|  %>
-    <%= form.hidden_field :post_id, value: @post.id %>
-    <div class="form-group">
-      <%= form.label :author %>
-      <% if signed_in? %>
+  <div class='shadow-sm m-3 p-3 bg-light rounded'>
+    <%= form_with model: @comment, local: true do |form|  %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+      <div class="form-group">
+        <%= form.label :author %>
+        <% if signed_in? %>
           <%= form.text_field :author, :value=>current_user.name, class: 'form-control', :readonly => true%>
-      <% else %>
+        <% else %>
           <%= form.text_field :author, class: 'form-control'%>
-      <% end %>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: 'form-control', rows: 5 %>
+      </div>
+      <div class="actions">
+        <%= form.submit class: 'btn btn-primary', data: { disable_with: 'Criando....⌛'}%>
+        <%= link_to 'Cancelar', posts_path, class: 'btn btn-danger' %>
+      </div>
+    <% end %>
+  </div>
+  <% @comments.each do |comment| %>
+    <div class='shadow-sm m-3 p-3 bg-light rounded'>
+      <div class='row'>
+        <div class='col'>
+          <strong><%= comment.author %></strong>
+        </div>
+        <div class='col text-right'>
+          <em data-toggle='tooltip' data-placement='top' title='<%= l comment.created_at, format: :long %>'>
+            <%= time_ago_in_words comment.created_at %> atrás
+          </em>
+        </button>
+      </div>
     </div>
-    <div class="form-group">
-      <%= form.label :body %>
-      <%= form.text_area :body, class: 'form-control', rows: 5 %>
-    </div>
-    <div class="actions">
-      <%= form.submit class: 'btn btn-primary', data: { disable_with: 'Criando....⌛'}%>
-      <%= link_to 'Cancelar', posts_path, class: 'btn btn-danger' %>
-    </div>
-  <% end %>
+    <hr>
+    <%# ATENÇÃO: Sempre que usarmos \n (como na linha abaixo), precisamos usar áspas duplas %>
+    <%= sanitize(comment.body.gsub("\n", '<br>')).html_safe %>
+  </div>
+<% end %>
 </div>
