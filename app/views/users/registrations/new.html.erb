@@ -2,6 +2,8 @@
   <h2 class="h3 mb-3 font-weight-normal">Cadastrar</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.label :name, for:'inputEmail', class:'sr-only' %>
+    <%= f.email_field :name, type:'text', id:'inputText', class:'form-control', autofocus: true, placeholder: "Nome" %>
     <%= f.label :email, for:'inputEmail', class:'sr-only' %>
     <%= f.email_field :email, type:'email', id:'inputEmail', class:'form-control', autofocus: true, autocomplete: "email", placeholder: "Email" %>
     <%= f.label :password, for:'inputPassword', class:'sr-only' %>
