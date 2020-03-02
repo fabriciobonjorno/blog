@@ -11,12 +11,11 @@ Resources used:
 * FriendlyID
 * Bootstrap
 * PgSearch
-* System dependencies
 * Database: Postgres
-* 
+
 
 * Link to access the project
-https://blogdeti.herokuapp.com/
+https://blog-de-ti.herokuapp.com/
 
 * Username: admin@admin.com
 * Password: 123456
