@@ -15,7 +15,6 @@
 //= require bootstrap/dist/js/bootstrap.min
 //= require popper.js/dist/popper
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 $(function () {
