@@ -45,7 +45,7 @@
       Copyright &copy; Blog de T.I <%= Date.current.year %>.
       <div class="text-center mt-2">
         <% if signed_in? %>
-          <%= link_to 'Sair', destroy_user_session_path, class:'btn btn-success' %>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class:'btn btn-success' %>
         <% else %>
           <%= link_to 'Entrar', new_user_session_path, class:'btn btn-success' %>
         <% end %>
