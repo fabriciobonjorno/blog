@@ -35,7 +35,7 @@ end
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post criado com sucesso.' }
+        format.html { redirect_to @post, notice: 'Artigo criado com sucesso.' }
         format.json { render :show, status: :created, location: @post }
       else
         flash.now[:alert] = @post.errors.full_messages.to_sentence
@@ -50,7 +50,7 @@ end
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post atualizado com sucesso.'}
+        format.html { redirect_to @post, notice: 'Artigo atualizado com sucesso.'}
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ end
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Artigo apagado com sucesso.' }
       format.json { head :no_content }
     end
   end

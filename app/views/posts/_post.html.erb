@@ -1,7 +1,9 @@
 <div class="card bg-light mb-3">
-  <div class="card-body">
+  <div class="card-body post-show">
+ 
     <h3><%= link_to post.title, post, class:'text-dark' %></h3>
     <div class="text-muted mb-3">
+    <%= image_tag post.image, class: 'img-fluid mb-3' %>
       <em>Autor: <%= post.author %> ( <%= l post.created_at, format: :long %> )</em>
     </div>
     <p>
