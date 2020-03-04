@@ -78,7 +78,7 @@ end
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :author, :body)
+    params.require(:post).permit(:title, :author, :body, :image)
   end
 
   def search_params

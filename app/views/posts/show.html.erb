@@ -1,4 +1,5 @@
-<div class="shadow p-3 mb-5 bg-light rounded">
+<div class="shadow p-3 mb-5 bg-light rounded post-show">
+  <%= image_tag @post.image, class: 'img-fluid mb-3' %>
   <h2 class="text-dark text-center"><%= @post.title %></h2>
   <hr>
   <p class="p-3"><%= @post.body.gsub("\n", "<br>").html_safe %></p>
