@@ -12,6 +12,7 @@ Resources used:
 * Bootstrap
 * PgSearch
 * Database: Postgres
+* Active Storage
 
 
 * Link to access the project
